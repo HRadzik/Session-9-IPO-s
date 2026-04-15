@@ -1,0 +1,20 @@
+#Hubert Radzik
+def forecast_sales(month, sales):
+    month = month.lower()
+    if month in ["jan", "feb", "mar"]:
+        percent = 0.10
+    elif month in ["apr", "may", "jun"]:
+        percent = 0.15
+    elif month in ["jul", "aug", "sep"]:
+        percent = 0.20
+    else:
+        percent = 0.25
+    return sales * (1 + percent)
+choice = "yes"
+while choice.lower() == "yes":
+    last_name = input("Enter last name: ")
+    month = input("Enter month: ")
+    sales = float(input("Enter sales: "))
+    result = forecast_sales(month, sales)
+    print("Forecasted sales:", round(result, 2))
+    choice = input("Do you want to continue? (Yes/No): ")
