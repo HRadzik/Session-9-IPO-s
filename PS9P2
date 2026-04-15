@@ -1,0 +1,12 @@
+#Hubert Radzik
+def calc_square_feet(length, width, height):
+    return (2 * length * width) + (2 * length * height) + (2 * width * height)
+choice = "yes"
+while choice.lower() == "yes":
+    length = float(input("Enter length: "))
+    width = float(input("Enter width: "))
+    height = float(input("Enter height: "))
+    sqft = calc_square_feet(length, width, height)
+    gallons = sqft / 50
+    print("Gallons needed:", round(gallons, 2))
+    choice = input("Do you want to continue? (Yes/No): ")
